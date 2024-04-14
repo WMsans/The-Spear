@@ -1,0 +1,1 @@
+/// @description Slashed by player

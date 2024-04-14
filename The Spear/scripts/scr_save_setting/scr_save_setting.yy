@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_save_setting",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_save_setting",
+  "parent":{
+    "name":"setting",
+    "path":"folders/Scripts/setting.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

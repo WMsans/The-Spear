@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_roomcode",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_roomcode",
+  "parent":{
+    "name":"initialize",
+    "path":"folders/Scripts/initialize.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

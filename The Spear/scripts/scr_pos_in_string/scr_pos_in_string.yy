@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_pos_in_string",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_pos_in_string",
+  "parent":{
+    "name":"basic",
+    "path":"folders/Scripts/basic.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

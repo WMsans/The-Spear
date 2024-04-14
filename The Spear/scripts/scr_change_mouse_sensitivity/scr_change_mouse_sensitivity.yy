@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_change_mouse_sensitivity",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_change_mouse_sensitivity",
+  "parent":{
+    "name":"setting",
+    "path":"folders/Scripts/setting.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_txt_init",
+  "audioGroupId":{
+    "name":"audiogroup_snd",
+    "path":"audiogroups/audiogroup_snd",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.053311,
+  "name":"snd_txt_init",
+  "parent":{
+    "name":"sfx",
+    "path":"folders/Sounds/sfx.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_txt_init.ogg",
+  "type":1,
+  "volume":1.0,
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_create_cutscene",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_create_cutscene",
+  "parent":{
+    "name":"cutscene",
+    "path":"folders/Scripts/cutscene.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

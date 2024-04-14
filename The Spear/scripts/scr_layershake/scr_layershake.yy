@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_layershake",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_layershake",
+  "parent":{
+    "name":"camera",
+    "path":"folders/Scripts/camera.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

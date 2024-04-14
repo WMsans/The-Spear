@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_portrait_decision",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_portrait_decision",
+  "parent":{
+    "name":"text",
+    "path":"folders/Scripts/text.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

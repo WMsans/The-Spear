@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_text_set_init",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_text_set_init",
+  "parent":{
+    "name":"text",
+    "path":"folders/Scripts/text.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

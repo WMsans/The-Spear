@@ -1,0 +1,4 @@
+This Engine is a ready-to-go templet for platformer games. 
+
+The resources used are listed below: 
+lighting system by jobo (https://twitter.com/jobo_gm)

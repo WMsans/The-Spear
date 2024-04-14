@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_cutscene_instance_destroy_nearest",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_cutscene_instance_destroy_nearest",
+  "parent":{
+    "name":"cutscene",
+    "path":"folders/Scripts/cutscene.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

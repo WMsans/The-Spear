@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_anim_create",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_anim_create",
+  "parent":{
+    "name":"anim",
+    "path":"folders/Scripts/anim.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_cutscene_end_action",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_cutscene_end_action",
+  "parent":{
+    "name":"cutscene",
+    "path":"folders/Scripts/cutscene.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

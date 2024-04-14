@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_menu_resume",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_menu_resume",
+  "parent":{
+    "name":"setting",
+    "path":"folders/Scripts/setting.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
