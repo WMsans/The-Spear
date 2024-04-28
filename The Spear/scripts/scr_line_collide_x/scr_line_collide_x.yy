@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_line_collide_x",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_line_collide_x",
+  "parent":{
+    "name":"basic",
+    "path":"folders/Scripts/basic.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

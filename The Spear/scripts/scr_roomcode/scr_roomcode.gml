@@ -11,9 +11,6 @@ function scr_roomcode(){
 	if(!instance_exists(obj_player)){
 		instance_create_depth(global.target_x,global.target_y, layers.overworld, obj_player);
 	}
-	if(!instance_exists(obj_item_mainbox)){
-		instance_create_depth(-999,-999,layers.UI,obj_item_mainbox);
-	}
 	if(instance_exists(obj_bgm)){
 		obj_bgm.into_new_room = true;
 	}

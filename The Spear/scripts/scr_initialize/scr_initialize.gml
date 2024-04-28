@@ -16,6 +16,7 @@ function scr_initialize(){
 	
 	
 	#endregion
+	instance_create_depth(0,0,layers.cursor,obj_mouse)
 	instance_create_depth(0,0,0,obj_GAME);
 	scr_fadeout(rm_title, global.target_x, global.target_y, obj_fade);
 }

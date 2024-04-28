@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_cross_product",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_cross_product",
+  "parent":{
+    "name":"basic",
+    "path":"folders/Scripts/basic.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

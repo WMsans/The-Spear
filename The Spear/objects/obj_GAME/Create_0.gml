@@ -13,5 +13,6 @@ resh=720;
 //Prev game states
 pppgame_states = global.gamestate;
 
-
+//mouse lock
+window_mouse_set_locked(true);
 

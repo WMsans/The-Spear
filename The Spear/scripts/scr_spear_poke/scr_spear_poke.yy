@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_spear_poke",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_spear_poke",
+  "parent":{
+    "name":"spear",
+    "path":"folders/Scripts/spear.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

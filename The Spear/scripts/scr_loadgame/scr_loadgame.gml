@@ -30,5 +30,7 @@ function scr_loadgame(){
 	global.keyshift = ini_read_real("control","SHIFT",vk_shift);
 	global.keyctrl =  ini_read_real("control","CONTROL",vk_control);
 	global.keyspace = ini_read_real("control","SPACE",vk_space);
+	
+	global.mouse_sensitivity = ini_read_real("control","mouse_sensitivity",1)
 	ini_close();
 }

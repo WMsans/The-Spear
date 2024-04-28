@@ -1,1 +1,1 @@
-/// @description Slashed by player
+/// @description Pocked by player

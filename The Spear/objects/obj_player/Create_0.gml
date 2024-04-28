@@ -2,36 +2,40 @@
 event_inherited();
 
 player_vision_in_dark = true;//create a lightsource following the player
+hold_spear = true;
 #region state machine
 enum PLAYER_STATES{
 	normal,
 	fight,
 	skill,
-	attack
+	attack,
+	anchor
 }
 
 player_state = PLAYER_STATES.normal;
 state_machine[PLAYER_STATES.normal] = scr_player_normal;
 state_machine[PLAYER_STATES.skill] = scr_player_skill;
+state_machine[PLAYER_STATES.anchor] = scr_player_anchor;
 
 #endregion
 #region motion
 hsp = 0;
 vsp = 0;
 
-grav = 1;
-jump_speed = 0;
-groundbuffer = 5;//when 3 pixel to the ground, allow jump
-jump_speed = -24;
-jump_buffer = 12;//frame after leaving ground when we can jump
+grav = GRAVITY;
+groundbuffer = 5;//when 5 pixel to the ground, allow jump
+jump_speed = -18;
+jump_buffer = 5;//frame after leaving ground when we can jump
+bounced = false;//if the player can de-jump by release space
 
 accel = 1.5;
 decel = 1.2;
 max_sp = 8;
-max_vsp = 20;
+max_vsp = 24;
+allow_move_timer = 0;
 
 key_jump_pressed_timer = 0;
-key_jump_pressed_buffer = 5;
+key_jump_pressed_buffer = 8;
 #endregion
 #region animation
 initflag=1;

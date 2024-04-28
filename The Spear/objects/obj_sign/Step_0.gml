@@ -14,7 +14,7 @@ if(instance_exists(obj_player)){
 				}
 			}
 		}
-		if(keyboard_check_pressed(global.keyup)){
+		if(input_check(global.keyup, 1)){
 			if(global.gamestate == game_states.init && !instance_exists(obj_textbox) && !touch_r && global.expecting_textblock_x==mid_x && global.expecting_textblock_y==mid_y-sprite_height/2){
 				scr_create_text(sign_id);
 			}
