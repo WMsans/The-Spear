@@ -25,10 +25,7 @@ repeat(array_len){
 	i++;
 }
 
-mouse_deltv = 0;
-mouse_deltv_sum = 0;
-mouse_delth = 0;
-mouse_delth_sum = 0;
-mouse_change_dis = 64;
+window_mouse_set_locked(false);
+cursor_sprite = spr_mouse;
 
 inputting=false;

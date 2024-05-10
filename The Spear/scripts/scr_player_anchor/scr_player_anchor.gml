@@ -3,6 +3,7 @@ function scr_player_anchor(){
 		player_state = PLAYER_STATES.normal;
 		exit;
 	}
+	hsp = 0; vsp = 0;
 	if(key_jump_pressed){
 		bounced = false;
 		jump_buffer = 0;

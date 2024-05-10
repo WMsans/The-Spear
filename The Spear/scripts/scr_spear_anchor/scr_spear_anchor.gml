@@ -1,8 +1,13 @@
 function scr_spear_anchor(){
 	if(!ds_list_empty(hit_objs)) ds_list_clear(hit_objs);
+	if(anchor_x == -999 && anchor_y == -999){
+		spear_state = SPEAR_STATES.normal;
+		exit;
+	}
 	if(instance_exists(obj_player) && obj_player.player_state != PLAYER_STATES.anchor){
 		obj_player.player_state  =PLAYER_STATES.anchor;
 	}
+	
 	sprite_index = spr_spear;
 	image_speed = 1;
 	
@@ -14,17 +19,46 @@ function scr_spear_anchor(){
 	var _tar_angle = tar_angle;
 	
 	if(anchor_face == ANCHOR_FACE.right){
-		_tar_angle += spin_speed * (key_up - key_down);
+		if(key_up - key_down != 0){
+			last_dir = key_up - key_down;
+			spin_speed = clamp(spin_speed + spin_speed_up * last_dir,-max_spin_speed, max_spin_speed);
+		}else{
+			spin_speed -= spin_speed_down * last_dir;
+			if(abs(spin_speed) < 2) spin_speed = 0;
+		}
+		_tar_angle += spin_speed ;
 	}else if(anchor_face == ANCHOR_FACE.left){
-		_tar_angle += spin_speed * (key_down - key_up);
+		if(key_down - key_up != 0){
+			last_dir = key_down - key_up;
+			spin_speed = clamp(spin_speed + spin_speed_up * last_dir,-max_spin_speed, max_spin_speed);
+		}else{
+			spin_speed -= spin_speed_down * last_dir;
+			if(abs(spin_speed) < 2) spin_speed = 0;
+		}
+		_tar_angle += spin_speed;
 	}else if(anchor_face == ANCHOR_FACE.top){
-		_tar_angle += spin_speed * (key_left - key_right);
+		if(key_left - key_right != 0){
+			last_dir = key_left - key_right;
+			spin_speed = clamp(spin_speed + spin_speed_up * last_dir,-max_spin_speed, max_spin_speed);
+		}else{
+			spin_speed -= spin_speed_down * last_dir;
+			if(abs(spin_speed) < 2) spin_speed = 0;
+		}
+		_tar_angle += spin_speed;
 	}else{
-		_tar_angle += spin_speed * (key_right - key_left);
+		if(key_right - key_left != 0){
+			last_dir = key_right - key_left;
+			spin_speed = clamp(spin_speed + spin_speed_up * last_dir,-max_spin_speed, max_spin_speed);
+		}
+		else{
+			spin_speed -= spin_speed_down * last_dir;
+			if(abs(spin_speed) < 2) spin_speed = 0;
+		}
+		_tar_angle += spin_speed;
 	}
 	
-	var _tar_x = anchor_x - lengthdir_x(sprite_get_width(sprite_index) - sprite_get_xoffset(sprite_index), _tar_angle);
-	var _tar_y = anchor_y - lengthdir_y(sprite_get_width(sprite_index) - sprite_get_xoffset(sprite_index), _tar_angle);
+	var _tar_x = anchor_x - lengthdir_x(sprite_get_bbox_right(sprite_index) - sprite_get_xoffset(sprite_index), _tar_angle);
+	var _tar_y = anchor_y - lengthdir_y(sprite_get_bbox_right(sprite_index) - sprite_get_xoffset(sprite_index), _tar_angle);
 	
 	var _flag = false;
 	with(obj_player){

@@ -6,9 +6,7 @@ hold_spear = true;
 #region state machine
 enum PLAYER_STATES{
 	normal,
-	fight,
 	skill,
-	attack,
 	anchor
 }
 
@@ -21,16 +19,20 @@ state_machine[PLAYER_STATES.anchor] = scr_player_anchor;
 #region motion
 hsp = 0;
 vsp = 0;
+pre_hsp = -999;
+pre_vsp = -999;
 
 grav = GRAVITY;
 groundbuffer = 5;//when 5 pixel to the ground, allow jump
 jump_speed = -18;
 jump_buffer = 5;//frame after leaving ground when we can jump
-bounced = false;//if the player can de-jump by release space
+bounced = 0;//if the player can de-jump by release space
+pre_bounced = -999;
 
 accel = 1.5;
 decel = 1.2;
 max_sp = 8;
+bounced_max_sp = 12;
 max_vsp = 24;
 allow_move_timer = 0;
 

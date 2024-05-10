@@ -6,7 +6,7 @@
   "name":"instance_create",
   "parent":{
     "name":"Instance",
-    "path":"folders/Scripts/basic/breakables/Instance.yy",
+    "path":"folders/Scripts/breakables/Instance.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

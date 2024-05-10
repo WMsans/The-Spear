@@ -24,9 +24,13 @@ function scr_game_txt(_text_id){
 //			scr_options("NopeNope","sign1-no");//选项4
 //				scr_option_color(c_red,c_red,c_white,c_white);//更改选项颜色
 			break;
-		case "hello world2":
-			scr_text("you hit me hihihiha")
+		case "LittleBonus":
+			scr_text("Little Bonus");
+				scr_text_float(0, 12);
 			break;
+		case "ToAnotherRoom":
+			scr_text("To Another Room");
+				scr_text_shake(0, 15);
 		#endregion
 		#region cutscene
 		case "cutscene1":

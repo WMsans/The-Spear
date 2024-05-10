@@ -6,7 +6,7 @@
   "name":"object_get_depth",
   "parent":{
     "name":"object",
-    "path":"folders/Scripts/basic/breakables/object.yy",
+    "path":"folders/Scripts/breakables/object.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

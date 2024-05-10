@@ -19,7 +19,6 @@ if(instance_exists(obj_player) && instance_exists(obj_spear)){
 			anchor_on_edge = true;
 			obj_spear.anchor_x = _anchor_x;
 			obj_spear.anchor_y = _anchor_y;
-			__anchor_y = _anchor_y
 			obj_spear.anchor_face = i;
 			_mindis = point_distance(_anchor_x,_anchor_y, obj_spear.x, obj_spear.y);
 		}
@@ -27,16 +26,19 @@ if(instance_exists(obj_player) && instance_exists(obj_spear)){
 	
 	var _face = obj_spear.anchor_face;
 	if(anchor_on_edge){
-		obj_spear.spear_state = SPEAR_STATES.normal;
-		obj_player.bounced = true;
+		obj_spear.pre_spear_state = SPEAR_STATES.normal;
+		obj_player.pre_bounced = true;
 		if(_face == 1){//上
-			obj_player.vsp = -bounce_speed;
+			obj_player.pre_vsp = -bounce_speed;
+			obj_player.pre_hsp = obj_player.hsp;
 		}else if(_face == 2){//下
-			
+			obj_player.pre_vsp = obj_player.vsp;
+			obj_player.pre_hsp = obj_player.hsp;
 		}else{//左右
-			obj_player.vsp = clamp(lengthdir_y(bounce_speed, point_direction(obj_spear.anchor_x,obj_spear.anchor_y, obj_spear.x, obj_spear.y)), -v_bounce_speed, v_bounce_speed);
+			
+			obj_player.pre_vsp = clamp(lengthdir_y(bounce_speed, point_direction(obj_spear.anchor_x,obj_spear.anchor_y, obj_spear.x, obj_spear.y)), -v_bounce_speed, v_bounce_speed);
 			var _dir = sign(lengthdir_x(bounce_speed, point_direction(obj_spear.anchor_x,obj_spear.anchor_y, obj_spear.x, obj_spear.y)))
-			obj_player.hsp = _dir * h_bounce_speed;
+			obj_player.pre_hsp = _dir * h_bounce_speed;
 			
 			obj_player.allow_move_timer = 10;
 		}

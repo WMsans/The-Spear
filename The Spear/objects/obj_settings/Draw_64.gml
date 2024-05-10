@@ -3,7 +3,6 @@ if(global.gamestate != game_states.setting) exit;
 draw_set_font(fnt_init);
 draw_set_color(c_white);
 
-mouse_change_dis = string_height("K");
 var ds_grid=ds_menu_pages[page],ds_height=ds_grid_height(ds_grid);
 var x_buffer=32,y_buffer=string_height("K");
 var start_y=y-((((ds_height-1)/2)*y_buffer)),start_x=x;
@@ -28,6 +27,13 @@ for(var yy=0;yy<ds_height;yy++){
 	}
 	x_offset[page][yy]+=(x_tar_offset[page][yy]-x_offset[page][yy])/5;//animate
 	draw_text_color(ltx+x_offset[page][yy],lty,ds_grid[# 0, yy],c,c,c_white,c_white,1);
+	
+	if(abs(scr_mouse_deltx()) || abs(scr_mouse_delty())){
+		if(point_in_rectangle(mouse_x - camera_get_view_x(view_camera[0]), mouse_y- camera_get_view_y(view_camera[0]), ltx+x_offset[page][yy] - string_width(ds_grid[# 0, yy]), lty - string_height(ds_grid[# 0, yy]) / 2, ltx+x_offset[page][yy], lty + string_height(ds_grid[# 0, yy]) / 2)){
+			if not (ds_grid[# 0, yy] == "Back to title" && room==rm_title)
+			menu_option[page] = yy;
+		}
+	}
 }
 
 //draw a line

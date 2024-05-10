@@ -27,7 +27,7 @@ if(instance_exists(obj_spear)){
 	
 	if(anchor_on_edge){
 		
-		obj_spear.spear_state = SPEAR_STATES.anchor;
+		obj_spear.pre_spear_state = SPEAR_STATES.anchor;
 	}
 }
 

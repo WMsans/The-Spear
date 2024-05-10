@@ -37,8 +37,8 @@
   ],
   "name":"rm_lighting_demo_single_line",
   "parent":{
-    "name":"Demo",
-    "path":"folders/Rooms/DEBUG/Demo.yy",
+    "name":"Lighting",
+    "path":"folders/Rooms/DEBUG/Lighting.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

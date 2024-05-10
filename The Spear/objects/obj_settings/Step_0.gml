@@ -53,7 +53,7 @@ if(inputting){
 			
 			break;
 	}
-}else{
+}else if( abs(scr_mouse_deltx())  == 0 && abs(scr_mouse_delty()) == 0){
 	var ochange= input_check(global.keydown, 1)-input_check(global.keyup, 1);
 	if(ochange!=0){
 		menu_option[page]+=ochange;

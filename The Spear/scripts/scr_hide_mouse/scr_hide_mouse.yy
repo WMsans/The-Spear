@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_hide_mouse",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_hide_mouse",
+  "parent":{
+    "name":"mouse",
+    "path":"folders/Scripts/mouse.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

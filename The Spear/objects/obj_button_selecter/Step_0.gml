@@ -1,6 +1,6 @@
 /// @description 
 if(global.gamestate == game_states.button){
-	if(now_selecting = noone){//randomly select one
+	if(now_selecting = noone){//select the top one
 		now_selecting_array_y = button_groups_by_y[? ds_map_find_first(button_groups_by_y)];
 		if(now_selecting_array_y != undefined){
 		now_selecting = now_selecting_array_y[array_length(now_selecting_array_y)-1];
@@ -9,6 +9,7 @@ if(global.gamestate == game_states.button){
 	}else{
 	#region button selection
 	if(input_check(global.keyup, 1)){
+		scr_hide_mouse();
 		now_selecting.selected = false;
 		var len = array_length(now_selecting_array_y);
 		var pre_selected = noone;
@@ -31,6 +32,7 @@ if(global.gamestate == game_states.button){
 		now_selecting = pre_selected;
 	}
 	if(input_check(global.keydown, 1)){
+		scr_hide_mouse();
 		now_selecting.selected = false;
 		var len = array_length(now_selecting_array_y);
 		var pre_selected = noone;
@@ -53,6 +55,7 @@ if(global.gamestate == game_states.button){
 		now_selecting = pre_selected;
 	}
 	if(input_check(global.keyleft, 1)){
+		scr_hide_mouse();
 		now_selecting.selected = false;
 		var len = array_length(now_selecting_array_x);
 		var pre_selected = noone;
@@ -75,6 +78,7 @@ if(global.gamestate == game_states.button){
 		now_selecting = pre_selected;
 	}
 	if(input_check(global.keyright, 1)){
+		scr_hide_mouse();
 		now_selecting.selected = false;
 		var len = array_length(now_selecting_array_x);
 		var pre_selected = noone;
@@ -117,5 +121,4 @@ if(global.gamestate == game_states.button){
 
 x += (tar_x - x) * moving_speed;
 y += (tar_y - y) * moving_speed;
-image_angle += (tar_dir - image_angle) * moving_speed;
-
+image_angle += angle_difference(tar_dir, image_angle) * moving_speed;

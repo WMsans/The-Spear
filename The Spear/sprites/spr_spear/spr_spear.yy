@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
   "%Name":"spr_spear",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":74,
   "bbox_left":0,
-  "bbox_right":127,
+  "bbox_right":107,
   "bbox_top":32,
   "collisionKind":1,
   "collisionTolerance":0,

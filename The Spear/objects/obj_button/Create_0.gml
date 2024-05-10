@@ -6,6 +6,7 @@ button_group = "";
 selected = false;
 arrow_placement = 2;//0 = right, 1 = down, 2 = left, 3 = up
 action = scr_empty;
+mouse_ready = true;
 
 tar_scale = 0;
 changing_speed = 0.25;

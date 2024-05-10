@@ -6,7 +6,7 @@
   "name":"scr_breakable_hit",
   "parent":{
     "name":"breakables",
-    "path":"folders/Scripts/basic/breakables.yy",
+    "path":"folders/Scripts/breakables.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

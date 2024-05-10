@@ -14,10 +14,7 @@
     "name":"spear",
     "path":"folders/Objects/basic/spear.yy",
   },
-  "parentObjectId":{
-    "name":"obj_par_depthobj",
-    "path":"objects/obj_par_depthobj/obj_par_depthobj.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

@@ -1,6 +1,6 @@
-function scr_breakable_hit(){
+function scr_breakable_hit(_hp = 1){
 	if(hp != -1){
-		hp --;
+		hp -= _hp;
 		alpha = 1; //start effect
 
 		///Breaking

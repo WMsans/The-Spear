@@ -1,6 +1,11 @@
 function scr_spear_poke(){
 	anchor_x = -999;
 	anchor_y = -999;
+	//change sprite
+	if(sprite_index != spr_spear_poke){
+		sprite_index = spr_spear_poke;
+		image_index = 0;
+	}
 	//跟随玩家
 	if(!instance_exists(obj_player)){
 		instance_destroy();
@@ -26,7 +31,11 @@ function scr_spear_poke(){
 	}
 	ds_list_destroy(hitbyattacknow); 
 	if(!ds_list_empty(hit_objs)) ds_list_clear(hit_objs);
-	
+	if(pre_spear_state != -999){
+		spear_state = pre_spear_state;
+		pre_spear_state = -999;
+		spin_speed = 0;
+	}
 	//结束动画时结束攻击
 	if(image_index == image_number - 1){
 		image_speed = 0;

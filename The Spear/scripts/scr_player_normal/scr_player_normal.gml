@@ -1,6 +1,12 @@
 function scr_player_normal(){
-//veritcal movement & jump
+if(pre_hsp != -999) hsp = pre_hsp;
+if(pre_vsp != -999) vsp = pre_vsp;
+if(pre_bounced != -999) bounced = pre_bounced;
+pre_hsp = -999; 
+pre_vsp = -999;
+pre_bounced = -999;
 
+//veritcal movement & jump
 vsp += grav;
 if(jump_buffer > 0){
 	jump_buffer -- ;
@@ -17,9 +23,9 @@ if(vsp < 0 && !key_jump && !bounced){
 
 var dirh = key_right - key_left;
 
-if(abs(hsp + dirh*accel) <= max_sp && !allow_move_timer) hsp += dirh*(accel);
+if((abs(hsp + dirh*accel) <= max_sp || (dirh != sign(hsp) && dirh != 0)) && !allow_move_timer) hsp += dirh*(accel);
 
-if(dirh == 0 || abs(hsp) > max_sp)
+if(dirh == 0 || abs(hsp) > bounced_max_sp )//
 if(hsp < 0){
 	hsp = min(hsp + decel, 0);
 }else{
@@ -48,6 +54,10 @@ y += vsp;
 
 if(scr_touch_block(x, y+ groundbuffer)){
 	jump_buffer = 5;
+	if(scr_touch_block(x + sprite_width, y + groundbuffer) && scr_touch_block(x + sprite_width, y + groundbuffer) ){
+		global.nearest_x = x;
+		global.nearest_y = y;
+	}
 }
 
 if(hold_spear){
@@ -55,6 +65,8 @@ if(hold_spear){
 		instance_create(x,y,obj_spear);
 	}
 }
+
+
 
 allow_move_timer = max(allow_move_timer -1, 0)
 #region animation

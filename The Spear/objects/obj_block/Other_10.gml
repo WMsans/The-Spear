@@ -19,7 +19,6 @@ if(instance_exists(obj_spear)){
 			anchor_on_edge = true;
 			obj_spear.anchor_x = _anchor_x;
 			obj_spear.anchor_y = _anchor_y;
-			__anchor_y = _anchor_y
 			obj_spear.anchor_face = i;
 			_mindis = point_distance(_anchor_x,_anchor_y, obj_spear.x, obj_spear.y);
 		}
@@ -27,7 +26,7 @@ if(instance_exists(obj_spear)){
 	
 	if(anchor_on_edge){
 		
-		obj_spear.spear_state = SPEAR_STATES.anchor;
+		obj_spear.pre_spear_state = SPEAR_STATES.anchor;
 	}
 }
 

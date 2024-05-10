@@ -3,6 +3,7 @@ function scr_enum(){
 		init,
 		button,
 		cutscene,
+		fade,
 		setting,
 		item,
 		skill_setting,

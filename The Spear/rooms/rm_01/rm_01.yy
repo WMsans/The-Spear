@@ -125,8 +125,8 @@
   ],
   "name":"rm_01",
   "parent":{
-    "name":"DEBUG",
-    "path":"folders/Rooms/DEBUG.yy",
+    "name":"Standard rooms",
+    "path":"folders/Rooms/DEBUG/Standard rooms.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

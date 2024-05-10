@@ -10,6 +10,7 @@ if(!instance_exists(obj_fade) && global.gamestate == game_states.init){
 	key_jump_pressed = input_check(global.keyz, 1);
 	key_poke = input_check(global.keyc, 0);
 	key_poke_pressed = input_check(global.keyc, 1);
+	key_attack_pressed = input_check(global.keyx, 1);
 }else{
 	key_left=0;
 	key_right=0;
@@ -19,6 +20,7 @@ if(!instance_exists(obj_fade) && global.gamestate == game_states.init){
 	key_jump_pressed=0;
 	key_poke = 0;
 	key_poke_pressed = 0;
+	key_attack_pressed = 0;
 }
 #endregion
 
