@@ -26,6 +26,9 @@ enum ANCHOR_FACE{
 anchor_x = 0;
 anchor_y = 0;
 anchor_face = 0;
+pre_anchor_x = -999;
+pre_anchor_y = -999;
+pre_anchor_face = -999;
 
 max_spin_speed = 12;
 spin_speed = 0;

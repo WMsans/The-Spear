@@ -33,14 +33,15 @@ if(hsp < 0){
 }
 
 
-if(scr_touch_block(x + hsp, y)){
+
+if(scr_touch_block(x + hsp, y)){//
 	var one = sign(hsp);
 	while(!scr_touch_block(x + one, y)){
-		x+= one;
+		x += one;
 	}
 	hsp = 0;
 }
-x+= hsp;
+x += hsp;
 
 if(scr_touch_block(x, y + vsp)){
 	var one = sign(vsp);
@@ -54,7 +55,7 @@ y += vsp;
 
 if(scr_touch_block(x, y+ groundbuffer)){
 	jump_buffer = 5;
-	if(scr_touch_block(x + sprite_width, y + groundbuffer) && scr_touch_block(x + sprite_width, y + groundbuffer) ){
+	if(scr_touch_block(x + bbox_right - bbox_left, y + groundbuffer) && scr_touch_block(x - bbox_right + bbox_left, y + groundbuffer) ){
 		global.nearest_x = x;
 		global.nearest_y = y;
 	}

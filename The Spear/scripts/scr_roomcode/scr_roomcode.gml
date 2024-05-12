@@ -26,8 +26,12 @@ function scr_roomcode(){
 	if(!instance_exists(obj_drawsorter)){
 		instance_create_depth(-999,-999,layers.overworld,obj_drawsorter);
 	}
+	if(!instance_exists(obj_health)){
+		instance_create_depth(-999,-999,layers.UI, obj_health);	
+	}
 	if(instance_exists(obj_bgm)){
 		obj_bgm.into_new_room = true;
 	}
+	
 	global.gamestate = game_states.init;
 }

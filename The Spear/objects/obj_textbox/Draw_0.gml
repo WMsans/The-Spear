@@ -1,6 +1,6 @@
 /// @description 
-box_x=camera_get_view_x(view_camera[0]);
-box_y=camera_get_view_y(view_camera[0])+448;
+box_x=camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0])/2 - sprite_width/2;
+box_y=camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]) - sprite_height - 144;
 accept_key=input_check(global.keyz, 1);
 draw_set_alpha(0.75);
 if(!input_check(global.keyz, 0)) pressingz=0;
@@ -49,7 +49,7 @@ if(!setup){
 		}
 		//get each char's location
 		for(var j=0;j<text_len[i];j++){
-			var _txt_x=box_x+text_x_offset[i]+border;
+			var _txt_x=box_x+text_x_offset[i]+border - 144;
 			var _txt_y=box_y+border;
 			var _txt_up_to_char=string_copy(text[i],1,j+1);
 			var _current_str_w=string_width(_txt_up_to_char)-string_width(char[j][i]);
@@ -135,9 +135,9 @@ if(accept_key){
 if(page_num){
 	txtb_img+=txtb_img_spd;
 	if(!print_op)
-		draw_sprite(txtb_spr[page],txtb_img,box_x+144,box_y);
+		draw_sprite(txtb_spr[page],txtb_img,box_x,box_y);
 	else
-		draw_sprite(spr_textbox,txtb_img,box_x+144,box_y);
+		draw_sprite(spr_textbox,txtb_img,box_x,box_y);
 }
 #endregion
 #region draw the portrait
@@ -197,7 +197,7 @@ else{//print the options
 	var _chosed=0;
 	switch(option_num){//how many options are there
 		case 1:
-			draw_text_color(box_x+640-string_width(option[0])/2,box_y+128-string_height(option[0])/2,option[0],c_yellow,c_yellow,c_white,c_white,1);
+			draw_text_color(box_x+496-string_width(option[0])/2,box_y+128-string_height(option[0])/2,option[0],c_yellow,c_yellow,c_white,c_white,1);
 			break;
 		case 2:
 			//selection
@@ -210,16 +210,16 @@ else{//print the options
 			}
 			if(1==option_pos){
 				//draw the yellow option
-				draw_text_color(box_x+144+border,box_y+128-string_height(option[0])/2,option[0],c_yellow,c_yellow,c_white,c_white,1);
+				draw_text_color(box_x+border,box_y+128-string_height(option[0])/2,option[0],c_yellow,c_yellow,c_white,c_white,1);
 				
 			}else{
-				draw_text_color(box_x+144+border,box_y+128-string_height(option[0])/2,option[0],option_color1[0],option_color2[0],option_color3[0],option_color4[0],1);
+				draw_text_color(box_x+border,box_y+128-string_height(option[0])/2,option[0],option_color1[0],option_color2[0],option_color3[0],option_color4[0],1);
 			}
 			if(2==option_pos){
 				//draw the yellow option
-				draw_text_color(box_x+144+992-string_width(option[1])-border,box_y+128-string_height(option[1])/2,option[1],c_yellow,c_yellow,c_white,c_white,1);
+				draw_text_color(box_x+992-string_width(option[1])-border,box_y+128-string_height(option[1])/2,option[1],c_yellow,c_yellow,c_white,c_white,1);
 			}else{
-				draw_text_color(box_x+144+992-string_width(option[1])-border,box_y+128-string_height(option[1])/2,option[1],option_color1[1],option_color2[1],option_color3[1],option_color4[1],1);
+				draw_text_color(box_x+992-string_width(option[1])-border,box_y+128-string_height(option[1])/2,option[1],option_color1[1],option_color2[1],option_color3[1],option_color4[1],1);
 			}
 			break;
 		case 3:
@@ -232,9 +232,9 @@ else{//print the options
 				if(input_check(global.keyright, 1)) {option_pos=2;_chosed=1;}
 				}
 				//draw the yellow option
-				draw_text_color(box_x+144+border,box_y+128-string_height(option[0])/2,option[0],c_yellow,c_yellow,c_white,c_white,1);
+				draw_text_color(box_x+border,box_y+128-string_height(option[0])/2,option[0],c_yellow,c_yellow,c_white,c_white,1);
 			}else{
-				draw_text_color(box_x+144+border,box_y+128-string_height(option[0])/2,option[0],option_color1[0],option_color2[0],option_color3[0],option_color4[0],1);
+				draw_text_color(box_x+border,box_y+128-string_height(option[0])/2,option[0],option_color1[0],option_color2[0],option_color3[0],option_color4[0],1);
 			}
 			if(2==option_pos){
 				if(!_chosed){
@@ -242,9 +242,9 @@ else{//print the options
 					if(input_check(global.keyright, 1)) {option_pos=3;_chosed=1;}
 				}
 				
-				draw_text_color(box_x+640-string_width(option[1])/2,box_y+128-string_height(option[1])/2,option[1],c_yellow,c_yellow,c_white,c_white,1);
+				draw_text_color(box_x+596-string_width(option[1])/2,box_y+128-string_height(option[1])/2,option[1],c_yellow,c_yellow,c_white,c_white,1);
 			}else{
-				draw_text_color(box_x+640-string_width(option[1])/2,box_y+128-string_height(option[1])/2,option[1],option_color1[1],option_color2[1],option_color3[1],option_color4[1],1);
+				draw_text_color(box_x+596-string_width(option[1])/2,box_y+128-string_height(option[1])/2,option[1],option_color1[1],option_color2[1],option_color3[1],option_color4[1],1);
 			}
 			if(3==option_pos){
 				if(!_chosed){
@@ -252,9 +252,9 @@ else{//print the options
 					if(input_check(global.keyright,1)) {option_pos=1;_chosed=1;}
 				}
 				//draw the yellow option
-				draw_text_color(box_x+144+992-string_width(option[2])-border,box_y+128-string_height(option[2])/2,option[2],c_yellow,c_yellow,c_white,c_white,1);
+				draw_text_color(box_x+992-string_width(option[2])-border,box_y+128-string_height(option[2])/2,option[2],c_yellow,c_yellow,c_white,c_white,1);
 			}else{
-				draw_text_color(box_x+144+992-string_width(option[2])-border,box_y+128-string_height(option[2])/2,option[2],option_color1[2],option_color2[2],option_color3[2],option_color4[2],1);
+				draw_text_color(box_x+992-string_width(option[2])-border,box_y+128-string_height(option[2])/2,option[2],option_color1[2],option_color2[2],option_color3[2],option_color4[2],1);
 			}
 			
 			break;
@@ -271,24 +271,24 @@ else{//print the options
 			}
 			
 			if(1==option_pos){
-				draw_text_color(box_x+640-string_width(option[0])/2,box_y+64-string_height(option[0])/2,option[0],c_yellow,c_yellow,c_white,c_white,1);
+				draw_text_color(box_x+496-string_width(option[0])/2,box_y+64-string_height(option[0])/2,option[0],c_yellow,c_yellow,c_white,c_white,1);
 			}else{
-				draw_text_color(box_x+640-string_width(option[0])/2,box_y+64-string_height(option[0])/2,option[0],option_color1[0],option_color2[0],option_color3[0],option_color4[0],1);
+				draw_text_color(box_x+496-string_width(option[0])/2,box_y+64-string_height(option[0])/2,option[0],option_color1[0],option_color2[0],option_color3[0],option_color4[0],1);
 			}
 			if(2==option_pos){
-				draw_text_color(box_x+640-string_width(option[1])/2,box_y+192-string_height(option[1])/2,option[1],c_yellow,c_yellow,c_white,c_white,1);
+				draw_text_color(box_x+496-string_width(option[1])/2,box_y+192-string_height(option[1])/2,option[1],c_yellow,c_yellow,c_white,c_white,1);
 			}else{
-				draw_text_color(box_x+640-string_width(option[1])/2,box_y+192-string_height(option[1])/2,option[1],option_color1[1],option_color2[1],option_color3[1],option_color4[1],1);
+				draw_text_color(box_x+496-string_width(option[1])/2,box_y+192-string_height(option[1])/2,option[1],option_color1[1],option_color2[1],option_color3[1],option_color4[1],1);
 			}
 			if(3==option_pos){
-				draw_text_color(box_x+144+border,box_y+128-string_height(option[2])/2,option[2],c_yellow,c_yellow,c_white,c_white,1);
+				draw_text_color(box_x+border,box_y+128-string_height(option[2])/2,option[2],c_yellow,c_yellow,c_white,c_white,1);
 			}else{
-				draw_text_color(box_x+144+border,box_y+128-string_height(option[2])/2,option[2],option_color1[2],option_color2[2],option_color3[2],option_color4[2],1);
+				draw_text_color(box_x+border,box_y+128-string_height(option[2])/2,option[2],option_color1[2],option_color2[2],option_color3[2],option_color4[2],1);
 			}
 			if(4==option_pos){
-				draw_text_color(box_x+144+992-string_width(option[3])-border,box_y+128-string_height(option[3])/2,option[3],c_yellow,c_yellow,c_white,c_white,1);
+				draw_text_color(box_x+992-string_width(option[3])-border,box_y+128-string_height(option[3])/2,option[3],c_yellow,c_yellow,c_white,c_white,1);
 			}else{
-				draw_text_color(box_x+144+992-string_width(option[3])-border,box_y+128-string_height(option[3])/2,option[3],option_color1[3],option_color2[3],option_color3[3],option_color4[3],1);
+				draw_text_color(box_x+992-string_width(option[3])-border,box_y+128-string_height(option[3])/2,option[3],option_color1[3],option_color2[3],option_color3[3],option_color4[3],1);
 			}
 			
 			break;

@@ -1,5 +1,12 @@
 function scr_spear_anchor(){
 	if(!ds_list_empty(hit_objs)) ds_list_clear(hit_objs);
+	if(pre_anchor_x != - 999) anchor_x = pre_anchor_x;
+	if(pre_anchor_y != - 999) anchor_y = pre_anchor_y;
+	if(pre_anchor_face != - 999) anchor_face = pre_anchor_face;
+	pre_anchor_x = -999;
+	pre_anchor_y = -999;
+	pre_anchor_face = -999;
+	
 	if(anchor_x == -999 && anchor_y == -999){
 		spear_state = SPEAR_STATES.normal;
 		exit;
@@ -13,8 +20,8 @@ function scr_spear_anchor(){
 	
 	
 	var tar_angle = point_direction(x,y,anchor_x,anchor_y);
-	var tar_x = anchor_x - lengthdir_x(sprite_get_width(sprite_index) - sprite_get_xoffset(sprite_index), image_angle);
-	var tar_y = anchor_y - lengthdir_y(sprite_get_width(sprite_index) - sprite_get_xoffset(sprite_index), image_angle);
+	var tar_x = anchor_x - scr_get_spear_head_x() + obj_spear.x;
+	var tar_y = anchor_y - scr_get_spear_head_y() + obj_spear.y;
 	
 	var _tar_angle = tar_angle;
 	
@@ -57,8 +64,8 @@ function scr_spear_anchor(){
 		_tar_angle += spin_speed;
 	}
 	
-	var _tar_x = anchor_x - lengthdir_x(sprite_get_bbox_right(sprite_index) - sprite_get_xoffset(sprite_index), _tar_angle);
-	var _tar_y = anchor_y - lengthdir_y(sprite_get_bbox_right(sprite_index) - sprite_get_xoffset(sprite_index), _tar_angle);
+	var _tar_x = anchor_x - lengthdir_x(sprite_get_width(sprite_index) - sprite_get_xoffset(sprite_index), _tar_angle);
+	var _tar_y = anchor_y - lengthdir_y(sprite_get_width(sprite_index) - sprite_get_xoffset(sprite_index), _tar_angle);
 	
 	var _flag = false;
 	with(obj_player){
@@ -67,12 +74,13 @@ function scr_spear_anchor(){
 	if(!_flag){
 		tar_angle = _tar_angle;
 		tar_x = _tar_x;
-		tar_y = _tar_y
+		tar_y = _tar_y;
+	}else{
+		spin_speed = 0;
+		
 	}
 	
 	image_angle += angle_difference(tar_angle, image_angle) / 3;
 	x += (tar_x - x) / 3;
 	y += (tar_y - y) / 3;
-	
-	
 }

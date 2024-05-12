@@ -1,6 +1,7 @@
 /// @description 
 event_inherited();
 #region key check
+
 if(!instance_exists(obj_fade) && global.gamestate == game_states.init){
 	key_left = input_check(global.keyleft, 0);
 	key_right = input_check(global.keyright, 0);
